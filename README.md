@@ -5,6 +5,7 @@
 ## Status
 
 * 2025-04-03 This README started.
+* 2025-04-03 First cut of first effort (`.../SDK_bare/`) compiles - ship it!
 
 ## 2025-04-03 references
 
@@ -48,4 +49,4 @@ I don't generally do Windows but may have access to a laptop running Windows and
 
 ## Errata
 
-None. Yet.
+* Typos are my brand! Feel free to submit a PR. It's been done before and you get credit on Github for submitting a PR and I get credit for merging it. :D
