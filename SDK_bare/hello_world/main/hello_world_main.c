@@ -12,27 +12,29 @@
 #include "esp_system.h"
 #include "esp_spi_flash.h"
 
+#include "my_gpio.h"
 
 void app_main()
 {
+    init_gpio();
     printf("Hello world!\n");
 
-    /* Print chip information */
-    esp_chip_info_t chip_info;
-    esp_chip_info(&chip_info);
-    printf("This is ESP8266 chip with %d CPU cores, WiFi, ",
-            chip_info.cores);
+    while (true)
+    {
 
-    printf("silicon revision %d, ", chip_info.revision);
+        /* Print chip information */
+        esp_chip_info_t chip_info;
+        esp_chip_info(&chip_info);
+        printf("This is ESP8266 chip with %d CPU cores, WiFi, ",
+               chip_info.cores);
 
-    printf("%dMB %s flash\n", spi_flash_get_chip_size() / (1024 * 1024),
-            (chip_info.features & CHIP_FEATURE_EMB_FLASH) ? "embedded" : "external");
+        printf("silicon revision %d, ", chip_info.revision);
 
-    for (int i = 10; i >= 0; i--) {
-        printf("Restarting in %d seconds...\n", i);
+        printf("%dMB %s flash\n", spi_flash_get_chip_size() / (1024 * 1024),
+               (chip_info.features & CHIP_FEATURE_EMB_FLASH) ? "embedded" : "external");
+
         vTaskDelay(1000 / portTICK_PERIOD_MS);
+        fflush(stdout);
     }
-    printf("Restarting now.\n");
-    fflush(stdout);
     esp_restart();
 }
