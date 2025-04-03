@@ -4,7 +4,14 @@
 
 ## Status
 
-* 2025-04-03 This readme started.
+* 2025-04-03 This README started.
+
+## 2025-04-03 references
+
+* <https://docs.espressif.com/projects/esp8266-rtos-sdk/en/latest/get-started/index.html>
+* <https://github.com/espressif/ESP8266_RTOS_SDK>
+* <https://github.com/espressif/ESP8266_NONOS_SDK>
+* <https://www.espressif.com/en/news/ESP8266_NonOS_3.0.3>
 
 ## 2025-04-03 Motivation
 
@@ -12,12 +19,12 @@ The ESP8266 from Espressif is cheap and keen to learn (Fawlty Towers reference.)
 
 However... The ESP8266 is an old product and is not seeing a lot of attention these days. If you're starting your journey with these devices, I highly suggest starting with the ESP32 family. Another option is to use something like ESPhome (with which I have zero experience) that I hear makes it almost trivial to integrate ESP based sensors with Home Assistant. And if you're definition of fun is not like mine, you might prefer the Arduino tool chain which is oriented toward beginners. (I am not a beginner - I used to pay the bills writing S/W for embedded systems.)
 
-My idea of fun is leveraging the best tools to get a job done, though some of these tools may have a big cost in terms of coming up to speed. However there are some things you should know.
+My idea of fun is leveraging the best tools to get a job done, though some of these tools may have a big cost in terms of coming up to speed. (Define "best".)
 
 ## 2025-04-03 Choices
 
 * `ESP8266_RTOS_SDK` tool chain. The 'NONOS' seems to be light on examples whereas the 'RTOS' documentation seems to not have a lot of information on FreeRTOS itself.
-* `ESP-IDF` plugin for VS Code. That's part of the reason I'm documenting this here as configuring it appears non-trivial.
+* `ESP-IDF` plugin for VS Code. That's part of the reason I'm documenting this as configuring it appears non-trivial.
 * `PlatformIO` plugin for VS Code. I have been told that the ESP8266 libraries are woefully out of date, but the libraries haven't been updated in about 5 years so I'm not sure how that can be true.
 * `Arduino`. This is a good starting point for someone who's not a professional programmer. I find some of their choices irksome, but they have made it easy for anyone to get started with embedded systems.
 
