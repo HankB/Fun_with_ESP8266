@@ -132,3 +132,9 @@ Hard resetting via RTS pin...
 ```
 
 The `esp_chip_info()` reports the external flash configured by `make menuconfig`. It also reports 2MB on the ESP-01 I tried and that only has 512KB.
+
+The monitor prints some gibberish when the chip resets. The boot loader (or whatever initializes the device) prints messages at a different baud rate than the application. It shoule be possible to set a matching baud rate but I have not done so here. And I just noticed that `make monitor` takes me out of the virtual environment.
+
+## 2025-04-03 But Wait! There's more
+
+The traditional embedded "hello world" in the embedded realm is to blink an LED. I'll do that before moving on. From the directory where we copied hello_wqorld there should be a blinky example. But I cannot find one. :-/ I'll fall back to other projects. I cheated and copied `my_gpio.c` and `my_gpio.h` from <https://github.com/HankB/ESP8266_RTOS_Start/tree/main> and then added the include and call to `init_gpio()` to `app_main()` and had a flashing blue LED. And at this time became confused about the virtual env. It looked like `. ~/.profile` to get the tools back in my `$PATH` took me out of the ENV, but I think it just changed the `PS1` back so it just looked like it was gone.

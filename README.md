@@ -6,6 +6,7 @@
 
 * 2025-04-03 This README started.
 * 2025-04-03 First cut of first effort (`.../SDK_bare/`) compiles - ship it!
+* 2025-04-03 `./SDK_bare/` complete including flashing LED.
 
 ## 2025-04-03 references
 
