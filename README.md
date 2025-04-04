@@ -9,6 +9,7 @@
 * 2025-04-03 `./SDK_bare/` complete including flashing LED.
 * 2025-04-03 Unsuccessful attempt to install the ESP-IDF extension in VS code (`./ESP-IDF_plugin`.)
 * 2025-04-04 PlatformIO extension (using Arduino framework) is working except for Serial I/O :-/ Done (`./PlatformIO`)
+* 2025-04-04 PlatformIO extension (using ESP8266_RTOS_SDK) Can't compile. Setting aside. (`./PlatformIO_RTOS`)
 
 ## 2025-04-03 references
 
