@@ -32,6 +32,7 @@ My idea of fun is leveraging the best tools to get a job done, though some of th
 * `ESP-IDF` plugin for VS Code. That's part of the reason I'm documenting this as configuring it appears non-trivial.
 * `PlatformIO` plugin for VS Code. I have been told that the ESP8266 libraries are woefully out of date, but the libraries haven't been updated in about 5 years so I'm not sure how that can be true.
 * `Arduino`. This is a good starting point for someone who's not a professional programmer. I find some of their choices irksome, but they have made it easy for anyone to get started with embedded systems.
+* `PlatformIO_RTOS` have another go with this using the ESP8266_RTOS_SDK.
 
 ## 2025-04-03 Plan
 
@@ -41,6 +42,16 @@ My idea of fun is leveraging the best tools to get a job done, though some of th
 1. Make a "hello world" project using the `Arduino` tool chain.
 
 The instructions for each of these tasks will be found in the README in the corresponding directory.
+
+## 2025-04-04 PlatformIO framework selection
+
+With the selection for the "WeMos Mini D1 Lite" the only platform available is `Arduino`. According to the following web pages, the ESP8266_RTOS_SDK and ESP-IDF frameworks 
+
+* <https://docs.platformio.org/en/latest/frameworks/espidf.html> `framework = espidf`, but apparently only the ESP32 variants.
+* <https://docs.platformio.org/en/latest/frameworks/esp8266-rtos-sdk.html> `framework = esp8266-rtos-sdk`
+* <https://docs.platformio.org/en/latest/frameworks/esp8266-nonos-sdk.html> `framework = esp8266-nonos-sdk`
+
+Perhaps choosing a different variant of this board will open possibilities. Or perhaps switching to a different board like the ESP-01 or NodeMCU.
 
 ## 2025-04-03 Dev environment
 
