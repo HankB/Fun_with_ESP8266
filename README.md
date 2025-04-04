@@ -14,6 +14,7 @@
 * <https://github.com/espressif/ESP8266_RTOS_SDK>
 * <https://github.com/espressif/ESP8266_NONOS_SDK>
 * <https://www.espressif.com/en/news/ESP8266_NonOS_3.0.3>
+* <https://docs.espressif.com/projects/esp-idf/en/latest/esp32/api-reference/system/freertos.html#> Intended for the ESP32 but probably similar to the ESP8266 except perhaps an older version.
 
 ## 2025-04-03 Motivation
 
