@@ -1,0 +1,12 @@
+{
+	"folders": [
+		{
+			"path": "."
+		},
+		{
+			"name": "PIO_RTOS",
+			"path": "PIO_RTOS"
+		}
+	],
+	"settings": {}
+}
