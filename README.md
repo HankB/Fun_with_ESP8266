@@ -8,6 +8,7 @@
 * 2025-04-03 First cut of first effort (`.../SDK_bare/`) compiles - ship it!
 * 2025-04-03 `./SDK_bare/` complete including flashing LED.
 * 2025-04-03 Unsuccessful attempt to install the ESP-IDF extension in VS code (`./ESP-IDF_plugin`.)
+* 2025-04-04 PlatformIO extension (using Arduino framework) is working except for Serial I/O :-/ Done (`./PlatformIO`)
 
 ## 2025-04-03 references
 
