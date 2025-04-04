@@ -72,4 +72,4 @@ In particular
 Selected python is from a virtual environment. Choose system python
 ```
 
-It's not clear that the ESP-IDF plugin is going to be installable on Debian.
+It's not clear that the ESP-IDF plugin is going to be installable on Debian. W/out doing more work to see if I can get it going, I'm not going to file an issue at this time. I'm setting this part of the exploration aside for now.
