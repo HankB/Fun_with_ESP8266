@@ -69,3 +69,12 @@ The `README.md` is created by me and is this file. I click the check mark to bui
 
 (It builds - ship it!) It flashes w/out issue and I see output. Of course it fails to connect since I've not put my credentials in. Time to commit before moving on.
 
+## 2025-04-05 an actual connection
+
+I've added my creds and also switched the baud rate in the sketch to 74880 which seems to be what the boot loader uses. It did not go well. I see messages in the "black window" (and terminal window) 
+
+```text
+Error while setting serial port parameters: 74,880 N 8 1
+```
+
+The serial monitor shows gibberish. Closing and reopening the monitor produces the same result and repeats the same error message. I'm switching the sketch back to 115200 baud. (`Serial.begin(115200);`) And build/flash. Interesting. The sketch output in the monitor window is correct but the setting still shows 74880. I guess the error message indicates it did not change from the default/previous 115200. (I won;t count that against Arduino since I'm using a legacy version of the tools.) The ESP connected and is getting time from ""ime.nist.gov". The next test is to see if it still connects w/out providing SSID and password. ... It does not. I'm not sur if that's an Arduino thing or an ESP8266 thing. The ESP32 I've worked with saves the most recently used credentials and I can delete them from my code to avoid committing them to Github. I'll use the other strategy of putting them in `secrets.h` and adding to .gitignore. Sadly I seem unable to open `secrets.h` in the Arduino IDE. (Legacy issue?)
