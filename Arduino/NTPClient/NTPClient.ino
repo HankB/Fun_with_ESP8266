@@ -21,11 +21,14 @@
 #include <ESP8266WiFi.h>
 #include <WiFiUdp.h>
 
+/*
+The following entries have been moved to secrets.h
 #ifndef STASSID
 #define STASSID "your-ssid"
 #define STAPSK "your-password"
 #endif
-
+*/
+#include "secrets.h"
 const char* ssid = STASSID;  // your network SSID (name)
 const char* pass = STAPSK;   // your network password
 
@@ -36,7 +39,7 @@ unsigned int localPort = 2390;  // local port to listen for UDP packets
     Lookup the IP address for the host name instead */
 // IPAddress timeServer(129, 6, 15, 28); // time.nist.gov NTP server
 IPAddress timeServerIP;  // time.nist.gov NTP server address
-const char* ntpServerName = "time.nist.gov";
+const char* ntpServerName = "pfsense.localdomain";
 
 const int NTP_PACKET_SIZE = 48;  // NTP time stamp is in the first 48 bytes of the message
 
