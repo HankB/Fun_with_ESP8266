@@ -138,3 +138,21 @@ The monitor prints some gibberish when the chip resets. The boot loader (or what
 ## 2025-04-03 But Wait! There's more
 
 The traditional embedded "hello world" in the embedded realm is to blink an LED. I'll do that before moving on. From the directory where we copied hello_wqorld there should be a blinky example. But I cannot find one. :-/ I'll fall back to other projects. I cheated and copied `my_gpio.c` and `my_gpio.h` from <https://github.com/HankB/ESP8266_RTOS_Start/tree/main> and then added the include and call to `init_gpio()` to `app_main()` and had a flashing blue LED. And at this time became confused about the virtual env. It looked like `. ~/.profile` to get the tools back in my `$PATH` took me out of the ENV, but I think it just changed the `PS1` back so it just looked like it was gone.
+
+## 2025-04-04 returning for a second look
+
+OBTW `make monitor` starts with
+
+```text
+Toolchain path: /home/hbarta/esp/xtensa-lx106-elf/bin/xtensa-lx106-elf-gcc
+Toolchain version: esp-2020r3-49-gd5524c1
+Compiler version: 8.4.0
+Python requirements from /home/hbarta/esp/ESP8266_RTOS_SDK/requirements.txt are satisfied.
+MONITOR
+/home/hbarta/esp/ESP8266_RTOS_SDK/tools/idf_monitor.py:322: DeprecationWarning: distutils Version classes are deprecated. Use packaging.version instead.
+  if StrictVersion(serial.VERSION) < StrictVersion('3.3.0'):
+--- idf_monitor on /dev/ttyUSB0 74880 ---
+--- Quit: Ctrl+] | Menu: Ctrl+T | Help: Ctrl+T followed by Ctrl+H ---
+```
+
+And the `Quit: Ctrl+]` is the important part. I was hoping that the output would list library and toolchain versions but I can't find anything there nor in the map.
