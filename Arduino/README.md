@@ -78,3 +78,39 @@ Error while setting serial port parameters: 74,880 N 8 1
 ```
 
 The serial monitor shows gibberish. Closing and reopening the monitor produces the same result and repeats the same error message. I'm switching the sketch back to 115200 baud. (`Serial.begin(115200);`) And build/flash. Interesting. The sketch output in the monitor window is correct but the setting still shows 74880. I guess the error message indicates it did not change from the default/previous 115200. (I won;t count that against Arduino since I'm using a legacy version of the tools.) The ESP connected and is getting time from ""ime.nist.gov". The next test is to see if it still connects w/out providing SSID and password. ... It does not. I'm not sur if that's an Arduino thing or an ESP8266 thing. The ESP32 I've worked with saves the most recently used credentials and I can delete them from my code to avoid committing them to Github. I'll use the other strategy of putting them in `secrets.h` and adding to .gitignore. Sadly I seem unable to open `secrets.h` in the Arduino IDE. (Legacy issue?)
+
+## 2025-04-05 make it blink
+
+Open the blink example. Now add a my_blink.ino to the NTPClient directory and copy the contents from the example. Build. It should fail with symbol conflicts with `setup()` and `loop()` and it does. Now to fix this up by renaming setup and providing `my_led_on()` and `my_led_off()` functions and a header to tie them to the main sketch. Can't open `my_led.h` :-/ Configure code to turn the LED on while processing the NTP packet. That code is a little awkward as it sends the request and waits a second before checking for a reply. And it seems to miss a lot of replies:
+
+```text
+sending NTP packet...
+no packet yet
+sending NTP packet...
+no packet yet
+sending NTP packet...
+no packet yet
+sending NTP packet...
+no packet yet
+sending NTP packet...
+packet received, length=48
+Seconds since Jan 1 1900 = 0
+Unix time = 2085978496
+The UTC time is 6:28:16
+sending NTP packet...
+no packet yet
+sending NTP packet...
+no packet yet
+sending NTP packet...
+no packet yet
+sending NTP packet...
+no packet yet
+sending NTP packet...
+packet received, length=48
+Seconds since Jan 1 1900 = 0
+Unix time = 2085978496
+The UTC time is 6:28:16
+sending NTP packet...
+```
+
+Every fifth query gets a reply. Is my NTP server throttling? Ah... Go back to 10s delay. Yes, it gets a reply to ewach query at 10s delay.

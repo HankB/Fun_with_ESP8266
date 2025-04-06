@@ -21,6 +21,8 @@
 #include <ESP8266WiFi.h>
 #include <WiFiUdp.h>
 
+#include "my_led.h"
+
 /*
 The following entries have been moved to secrets.h
 #ifndef STASSID
@@ -49,6 +51,7 @@ byte packetBuffer[NTP_PACKET_SIZE];  // buffer to hold incoming and outgoing pac
 WiFiUDP udp;
 
 void setup() {
+  my_blink_setup();
   Serial.begin(115200);
   Serial.println();
   Serial.println();
@@ -81,8 +84,10 @@ void loop() {
 
   sendNTPpacket(timeServerIP);  // send an NTP packet to a time server
   // wait to see if a reply is available
+  my_led_off();
   delay(1000);
-
+  my_led_on();
+  
   int cb = udp.parsePacket();
   if (!cb) {
     Serial.println("no packet yet");
@@ -130,6 +135,7 @@ void loop() {
     Serial.println(epoch % 60);  // print the second
   }
   // wait ten seconds before asking for the time again
+  my_led_off();
   delay(10000);
 }
 
