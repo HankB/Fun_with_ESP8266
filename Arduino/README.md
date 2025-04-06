@@ -113,4 +113,4 @@ The UTC time is 6:28:16
 sending NTP packet...
 ```
 
-Every fifth query gets a reply. Is my NTP server throttling? Ah... Go back to 10s delay. Yes, it gets a reply to ewach query at 10s delay.
+Every fifth query gets a reply. Is my NTP server throttling? Ah... Go back to 10s delay. Yes, it gets a reply to each query at 10s delay.
