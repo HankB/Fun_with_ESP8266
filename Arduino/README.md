@@ -114,3 +114,13 @@ sending NTP packet...
 ```
 
 Every fifth query gets a reply. Is my NTP server throttling? Ah... Go back to 10s delay. Yes, it gets a reply to each query at 10s delay.
+
+## 2025-04-06 using an updated IDE
+
+I downloaded both the AppImage and zip and have "installed" them and am giving them a run through. Initial observations:
+
+* The AppImage (2.3.4) did not pick up board ID or port from the original. (I never had to select the port with the legacy version, it just foumd it.) Once set, I opened the sketch and it worked. The nice thing abouit all of these is that if I open ip the main sketch, they automatically open the other file and headers.
+* The zip version seems to share settings with the AppImage.
+* The monitor can change baud rates on the fly and can use 74880 so I can see the boot loader messages.
+
+I plan to start a new ESP8266 project (Memos Mini/MQTT/NTP/DS18B20) to replace a Pi Zero that's doing all of this and at times seems to have issues maintaining WiFi connectivity. I've got everything but the DS18B20 working using ESP-IDF but have not gotten the DS18B20 working and I know it works with the Arduino tool chain,
